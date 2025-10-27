@@ -4,6 +4,9 @@
 
 package main;
 
+import main.controller.GameController;
+import main.controller.MainController;
+
 /**
  *
  * @author gabri
@@ -11,6 +14,7 @@ package main;
 public class ProyectoParchis {
 
     public static void main(String[] args) {
-        
+        new GameController();
     }
 }
+

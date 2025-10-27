@@ -4,6 +4,9 @@
  */
 package main.view;
 
+import java.awt.event.ActionListener;
+import main.controller.GameController;
+
 /**
  *
  * @author gabri
@@ -17,6 +20,13 @@ public class PanelInstrucciones extends javax.swing.JPanel {
         initComponents();
     }
 
+    public void setController(GameController controller){
+        this.listen(controller);
+    }
+   
+    public void listen(ActionListener controller){
+        this.btnAtras.addActionListener(controller);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -26,19 +36,25 @@ public class PanelInstrucciones extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+        btnAtras = new javax.swing.JButton();
+        lblInstrucciones = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setBackground(new java.awt.Color(204, 204, 255));
-        jButton1.setFont(new java.awt.Font("Segoe UI Black", 3, 18)); // NOI18N
-        jButton1.setText("Atrás");
-        jButton1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 300, 90, 40));
+        btnAtras.setBackground(new java.awt.Color(204, 204, 255));
+        btnAtras.setFont(new java.awt.Font("Segoe UI Black", 3, 18)); // NOI18N
+        btnAtras.setText("Atras");
+        btnAtras.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 300, 90, 40));
+
+        lblInstrucciones.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        lblInstrucciones.setText("Instrucciones");
+        add(lblInstrucciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 50, -1, -1));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnAtras;
+    private javax.swing.JLabel lblInstrucciones;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,20 +5,21 @@
 package main.view;
 
 import java.awt.event.ActionListener;
+import main.controller.GameController;
 
 /**
  *
- * @author gabri
+ * @author Gabriel Mora Hernandes
  */
 public class GUIInicio extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(GUIInicio.class.getName());
-
+   
     /**
      * Creates new form GUIInicio
      */
-    public GUIInicio() {
+    public GUIInicio(GameController controller) {
         initComponents();
+        this.listen(controller);
     }
 
      public void listen(ActionListener controller){
@@ -26,9 +27,9 @@ public class GUIInicio extends javax.swing.JFrame {
         this.btnHistoria.addActionListener(controller);
         this.btnCreditos.addActionListener(controller);
         this.btnJugar.addActionListener(controller);
-        
-        
+       
      }
+     
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

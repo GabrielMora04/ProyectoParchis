@@ -20,6 +20,14 @@ public class Home {
         this.color = this.color;
         this.pieces = new Piece[4];
     }
+
+    public Color getColor() {
+        return color;
+    }
+
+    public void setColor(Color color) {
+        this.color = color;
+    }
     
     public void setPiece(int index, Piece piece){
         this.pieces[index] = piece;
@@ -36,7 +44,9 @@ public class Home {
     public void draw(Component c, Graphics g){
         if (pieces !=null) {
             for (int i = 0; i < pieces.length; i++) {
-                pieces[i].draw(c, g);
+                if(pieces[i] != null){
+                    pieces[i].draw(c, g);
+                }
             }
         } 
     }

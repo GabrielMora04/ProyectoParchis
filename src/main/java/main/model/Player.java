@@ -8,7 +8,7 @@ import java.awt.Color;
 
 /**
  *
- * @author gabri
+ * @author Gabriel Mora Hernandez
  */
 public class Player {
     private String name;
