@@ -10,7 +10,7 @@ import main.controller.GameController;
 
 /**
  *
- * @author gabri
+ * @author Gabriel Mora Hernandez
  */
 public class ControllPanel extends javax.swing.JPanel {
 
@@ -18,23 +18,22 @@ public class ControllPanel extends javax.swing.JPanel {
      * Creates new form ControllPanel
      */
     private ImageIcon background;
-    private GameController gameController;
+    private GameController controller;
     private ImageIcon boardGraphic;
-     private ImageIcon piece;
     
     public ControllPanel() {
         initComponents();
         this.background = new ImageIcon("./src/main/resources/img/tableroCaja.png");
         this.boardGraphic = new ImageIcon("./src/main/resources/img/TableroParchis.png");
-        this.piece = new ImageIcon("./src/main/resources/img/fichaAmarilla.png");
+        
     }
 
    public void setController(GameController controller){
-        this.gameController = controller;
-        this.listen(controller);
+        this.controller = controller;
+        listen();
     }
     
-   public void listen(ActionListener controller){
+   public void listen(){
         this.btnDado.addActionListener(controller);
         this.btnJugador1.addActionListener(controller);
         this.btnJugador2.addActionListener(controller);

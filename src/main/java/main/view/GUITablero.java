@@ -40,13 +40,25 @@ public class GUITablero extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        controllPanel1 = new main.view.ControllPanel();
         boardPanel1 = new main.view.BoardPanel();
+        controllPanel1 = new main.view.ControllPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(controllPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 720));
+
+        javax.swing.GroupLayout boardPanel1Layout = new javax.swing.GroupLayout(boardPanel1);
+        boardPanel1.setLayout(boardPanel1Layout);
+        boardPanel1Layout.setHorizontalGroup(
+            boardPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 670, Short.MAX_VALUE)
+        );
+        boardPanel1Layout.setVerticalGroup(
+            boardPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 680, Short.MAX_VALUE)
+        );
+
         getContentPane().add(boardPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 670, 680));
+        getContentPane().add(controllPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 720));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

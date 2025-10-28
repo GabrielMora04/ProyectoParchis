@@ -20,7 +20,6 @@ public class Square {
         this.position = position;
     }
 
-    
     public Square(Piece piece, Position position) {
         this.piece = piece;
         this.position = position;

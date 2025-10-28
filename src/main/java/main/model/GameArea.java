@@ -17,11 +17,11 @@ public class GameArea {
     private Player player2;
 
     public GameArea() {
-        this.board = new Board("Rojo","Verde");
+        board = new Board("Rojo","Amarillo");
     }
    
     public Board getBoard(){
-        return this.board;
+        return board;
         
     }
     

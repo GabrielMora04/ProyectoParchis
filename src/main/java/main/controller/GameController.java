@@ -54,7 +54,6 @@ public class GameController implements ActionListener{
             break;
             case "Jugador1":
                 System.out.println("Jugador 1 presionado");
-             
             break;
             case "Jugador2":
                 System.out.println("Jugador 2 presionado");
@@ -63,7 +62,7 @@ public class GameController implements ActionListener{
                 System.out.println("Jugar presionado");
             break;
             case "Salir":
-            System.exit(0);
+                System.exit(0);
             break;
         }
     }

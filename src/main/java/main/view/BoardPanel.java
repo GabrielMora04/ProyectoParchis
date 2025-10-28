@@ -19,18 +19,15 @@ public class BoardPanel extends javax.swing.JPanel {
      */
     private ImageIcon boardGraphic;
     private GameController gameController;
-    private ImageIcon piece;
     
     public BoardPanel() {
         initComponents();
-        this.boardGraphic = new ImageIcon("./src/main/resources/img/TableroParchis.png");
-        this.piece = new ImageIcon("./src/main/resources/img/fichaAmarilla.png");
+        this.boardGraphic = new ImageIcon("./src/main/resources/img/TableroParchis.png"); 
     }
   
     public void setController(GameController controller){
         this.gameController = controller;
     }
-    
     
    @Override
     public void paintComponent(Graphics g){

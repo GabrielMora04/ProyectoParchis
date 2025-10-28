@@ -5,29 +5,30 @@
 package main.view;
 
 import java.awt.event.ActionListener;
-import main.controller.GameController;
+import main.controller.MainController;
 
 /**
  *
  * @author Gabriel Mora Hernandes
  */
 public class GUIInicio extends javax.swing.JFrame {
-    
+    private MainController controller;
    
     /**
      * Creates new form GUIInicio
      */
-    public GUIInicio(GameController controller) {
+    public GUIInicio(MainController controller) {
         initComponents();
-        this.listen(controller);
+        this.controller = controller;
+        listen();
     }
 
-     public void listen(ActionListener controller){
+     public void listen(){
         this.btnInstrucciones.addActionListener(controller);
         this.btnHistoria.addActionListener(controller);
         this.btnCreditos.addActionListener(controller);
         this.btnJugar.addActionListener(controller);
-       
+       this.btnSalir.addActionListener(controller);
      }
      
     /**
@@ -44,8 +45,7 @@ public class GUIInicio extends javax.swing.JFrame {
         btnCreditos = new javax.swing.JButton();
         btnHistoria = new javax.swing.JButton();
         btnJugar = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        lblSeleColor = new javax.swing.JLabel();
+        btnSalir = new javax.swing.JButton();
         imgFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -83,16 +83,11 @@ public class GUIInicio extends javax.swing.JFrame {
         btnJugar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         getContentPane().add(btnJugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(279, 130, 80, 43));
 
-        jComboBox1.setBackground(new java.awt.Color(204, 204, 255));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Verde", "Rojo", "Azul", "Amarillo" }));
-        jComboBox1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 160, -1, -1));
-
-        lblSeleColor.setBackground(new java.awt.Color(204, 204, 255));
-        lblSeleColor.setFont(new java.awt.Font("Segoe UI Semilight", 3, 14)); // NOI18N
-        lblSeleColor.setText("Seleccion de color");
-        lblSeleColor.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        getContentPane().add(lblSeleColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 130, -1, -1));
+        btnSalir.setBackground(new java.awt.Color(204, 204, 255));
+        btnSalir.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        btnSalir.setText("Salir");
+        btnSalir.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 340, 90, 40));
 
         imgFondo.setText("jLabel1");
         getContentPane().add(imgFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 400));
@@ -107,9 +102,8 @@ public class GUIInicio extends javax.swing.JFrame {
     private javax.swing.JButton btnHistoria;
     private javax.swing.JButton btnInstrucciones;
     private javax.swing.JButton btnJugar;
+    private javax.swing.JButton btnSalir;
     private javax.swing.JLabel imgFondo;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel lblSeleColor;
     private javax.swing.JLabel lblWelcome;
     // End of variables declaration//GEN-END:variables
 }

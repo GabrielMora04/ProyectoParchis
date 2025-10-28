@@ -13,7 +13,7 @@ import java.awt.Graphics;
  * @author Gabriel Mora Hernandez
  */
 public class Home {
-    private Color color;
+    private String color;
     private  Piece[] pieces;
 
     public Home(String color) {
@@ -21,11 +21,11 @@ public class Home {
         this.pieces = new Piece[4];
     }
 
-    public Color getColor() {
+    public String getColor() {
         return color;
     }
 
-    public void setColor(Color color) {
+    public void setColor(String color) {
         this.color = color;
     }
     
@@ -41,13 +41,13 @@ public class Home {
         return this.pieces.length;
     }
     
-    public void draw(Component c, Graphics g){
-        if (pieces !=null) {
-            for (int i = 0; i < pieces.length; i++) {
-                if(pieces[i] != null){
-                    pieces[i].draw(c, g);
-                }
-            }
-        } 
-    }
+//    public void draw(Component c, Graphics g){
+//        if (pieces !=null) {
+//            for (int i = 0; i < pieces.length; i++) {
+//                if(pieces[i] != null){
+//                    pieces[i].draw(c, g);
+//                }
+//            }
+//        } 
+//    }
 }//end class

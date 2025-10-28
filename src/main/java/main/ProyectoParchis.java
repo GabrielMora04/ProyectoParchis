@@ -9,12 +9,13 @@ import main.controller.MainController;
 
 /**
  *
- * @author gabri
+ * @author Gabriel Mora Hernandez
  */
 public class ProyectoParchis {
 
     public static void main(String[] args) {
-        new GameController();
+        MainController mainController = new MainController();
     }
+    
 }
 

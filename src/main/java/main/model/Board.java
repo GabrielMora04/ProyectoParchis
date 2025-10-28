@@ -23,8 +23,6 @@ public class Board {
     public Board(String color1, String color2){   
         this.squares = new Square[68];
         
-        int[] especiales = {12, 17, 29, 34, 46, 51, 63, 68};
-
         this.positions = new Position[68];
         this.homeYellow = new Home(color1);
         this.homeRed = new Home(color2);
