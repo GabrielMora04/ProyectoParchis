@@ -22,10 +22,9 @@ public class Piece {
     public Piece() {
     }
 
-    public Piece(Position position, ImageIcon imageIcon, Color color) {
+    public Piece(Position position, ImageIcon imageIcon) {
         this.position = position;
         this.imageIcon = imageIcon;
-        this.color = color;
     }
 
     public Position getPosition() {

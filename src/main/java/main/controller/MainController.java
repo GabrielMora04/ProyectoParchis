@@ -15,10 +15,10 @@ import main.view.GUIInstrucciones;
 
 /**
  *
- * @author gabri
+ * @author Gabriel Mora Hernandez
  */
 public class MainController implements ActionListener {
-    //Falta Pulir//
+    
     
     
     private GUIInicio gUIInicio;
@@ -41,7 +41,7 @@ public class MainController implements ActionListener {
         switch (e.getActionCommand()) {
             case "Jugar":
                 gUIInicio.setVisible(false);
-                gameController = new GameController();
+                gameController = new GameController(gUIInicio);
             break;
             case "Instrucciones":
                 gUIInicio.setVisible(false);

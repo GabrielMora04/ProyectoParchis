@@ -23,10 +23,15 @@ public class BoardPanel extends javax.swing.JPanel {
     public BoardPanel() {
         initComponents();
         this.boardGraphic = new ImageIcon("./src/main/resources/img/TableroParchis.png"); 
+        
     }
   
     public void setController(GameController controller){
         this.gameController = controller;
+    }
+    public void listen(GameController controller){
+        this.gameController = controller;
+        addMouseListener(controller);
     }
     
    @Override

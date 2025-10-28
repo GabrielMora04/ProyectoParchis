@@ -6,6 +6,8 @@ package main.view;
 
 import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JLabel;
 import main.controller.GameController;
 
 /**
@@ -40,7 +42,20 @@ public class ControllPanel extends javax.swing.JPanel {
         this.btnJugar.addActionListener(controller);
         this.btnSalir.addActionListener(controller);
     }
+
+    public JButton getBtnDado() {
+        return btnDado;
+    }
+
+    public JLabel getLblJugador() {
+        return lblJugador;
+    }
+
+    public JLabel getLblResultadoDado() {
+        return lblResultadoDado;
+    }
     
+   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -56,6 +71,8 @@ public class ControllPanel extends javax.swing.JPanel {
         btnJugador1 = new javax.swing.JButton();
         btnPuntaje = new javax.swing.JLabel();
         btnDado = new javax.swing.JButton();
+        lblJugador = new javax.swing.JLabel();
+        lblResultadoDado = new javax.swing.JLabel();
         lblFondoTablero = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -78,25 +95,36 @@ public class ControllPanel extends javax.swing.JPanel {
         btnJugador2.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         btnJugador2.setText("Jugador2");
         btnJugador2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        add(btnJugador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 400, 100, 80));
+        add(btnJugador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 420, 100, 80));
 
         btnJugador1.setBackground(new java.awt.Color(153, 255, 204));
         btnJugador1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         btnJugador1.setText("Jugador1");
         btnJugador1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        add(btnJugador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 290, 100, 80));
+        add(btnJugador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 250, 100, 80));
 
         btnPuntaje.setBackground(new java.awt.Color(204, 255, 204));
-        btnPuntaje.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
-        btnPuntaje.setText("Puntaje");
-        btnPuntaje.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        add(btnPuntaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 210, 90, 50));
+        btnPuntaje.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        btnPuntaje.setText("Puntaje:");
+        btnPuntaje.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        add(btnPuntaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 190, 100, 30));
 
         btnDado.setBackground(new java.awt.Color(242, 242, 242));
         btnDado.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        btnDado.setText("Dado");
+        btnDado.setText("Lanzar Dado");
         btnDado.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        add(btnDado, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 110, 70, 50));
+        add(btnDado, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 70, 120, 50));
+
+        lblJugador.setBackground(new java.awt.Color(204, 204, 204));
+        lblJugador.setFont(new java.awt.Font("Segoe UI Historic", 3, 18)); // NOI18N
+        lblJugador.setText("Turno: Jugador1");
+        add(lblJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 360, 140, 30));
+
+        lblResultadoDado.setBackground(new java.awt.Color(204, 204, 255));
+        lblResultadoDado.setFont(new java.awt.Font("Segoe UI Historic", 3, 18)); // NOI18N
+        lblResultadoDado.setText("Dado:");
+        lblResultadoDado.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        add(lblResultadoDado, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 140, 100, -1));
 
         lblFondoTablero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/tableroCaja.png"))); // NOI18N
         lblFondoTablero.setText("jLabel1");
@@ -115,5 +143,7 @@ public class ControllPanel extends javax.swing.JPanel {
     private javax.swing.JLabel btnPuntaje;
     private javax.swing.JButton btnSalir;
     private javax.swing.JLabel lblFondoTablero;
+    private javax.swing.JLabel lblJugador;
+    private javax.swing.JLabel lblResultadoDado;
     // End of variables declaration//GEN-END:variables
 }

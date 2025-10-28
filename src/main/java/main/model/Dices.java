@@ -14,17 +14,23 @@ public class Dices {
     private Random random;
     private int numero;
 
-    public Dices() {
-    }
-
     public Dices(Random random, int numero) {
-        this.random = random;
+        this.random = new Random();
         this.numero = numero;
     }
-    
+
+    public Dices() {
+        this.random = random;
+        
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+   
     
     public int rollDice(){
-        numero = random.nextInt(6) +1;
+        numero = random.nextInt(6) + 1;
         return numero;
     }
 }

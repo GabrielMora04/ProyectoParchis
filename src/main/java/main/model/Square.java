@@ -42,6 +42,6 @@ public class Square {
     }
     
     public boolean isEmpty(){
-        return (piece != null); //probar con == y !=
+        return (piece != null);
     }
 }

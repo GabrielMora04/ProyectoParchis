@@ -12,37 +12,25 @@ import java.awt.Color;
  */
 public class Player {
     private String name;
-    private Color color;
+    private String color;
+    private Home quadrant;
+   
     private int score;
 
-    public Player(String name, Color color, int score) {
+    public Player(String name, String color, Home quadrant) {
         this.name = name;
         this.color = color;
-        this.score = 5;
+        this.quadrant = quadrant;
+        score = 5;
+        
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Color getColor() {
+    public String getColor() {
         return color;
-    }
-
-    public void setColor(Color color) {
-        this.color = color;
-    }
-
-    public int getScore() {
-        return score;
-    }
-
-    public void setScore(int score) {
-        this.score = score;
     }
     
     

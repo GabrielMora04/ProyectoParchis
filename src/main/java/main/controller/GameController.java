@@ -4,14 +4,19 @@
  */
 package main.controller;
 
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import javax.swing.ImageIcon;
 import main.model.Board;
+import main.model.Dices;
 import main.model.GameArea;
 import main.model.Piece;
+import main.model.Player;
 import main.model.Position;
 import main.view.BoardPanel;
 import main.view.ControllPanel;
@@ -22,35 +27,43 @@ import main.view.GUITablero;
  *
  * @author Gabriel Mora Hernandez
  */
-public class GameController implements ActionListener{
+public class GameController implements ActionListener, MouseListener{
     private BoardPanel boardPanel;
     private GUITablero gUITablero;
     private GameArea gameArea;
     private Piece piece;
     private ControllPanel controllPanel;
     private GUIInicio gUIInicio;
+    private Dices dices;
+    private Board board;
+    
    
-    public GameController() {
+    public GameController(GUIInicio gUIInicio) {
         this.gUIInicio = gUIInicio;
         this.gUITablero = new GUITablero(this);
         this.gUITablero.setVisible(true);
         this.boardPanel = gUITablero.getBoardPanel();
         this.gameArea = new GameArea();
         this.controllPanel = gUITablero.getPanelControll();
+        board = new Board("Red", "Amarillo");
+        dices = new Dices();
         
-    //piece = new Piece(new Position(453,468), new ImageIcon("./src/main/resources/img/fichaAmarilla.png"));
+      
+        //piece = new Piece(new Position(453,468), new ImageIcon("./src/main/resources/img/fichaAmarilla.png"));
     }
     
     public void draw(Component c, Graphics g){
         piece.draw(c, g);
         gameArea.draw(c, g);
+        board.draw(c, g);
         }
     
+   
     @Override
     public void actionPerformed(ActionEvent e) {
          switch (e.getActionCommand()) {
-            case "Dado":
-                System.out.println("Dado presionado");
+            case "Lanzar Dado":
+                System.out.println("Resultado de dado:");
             break;
             case "Jugador1":
                 System.out.println("Jugador 1 presionado");
@@ -66,8 +79,36 @@ public class GameController implements ActionListener{
             break;
         }
     }
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        System.out.println("X " + e.getX() + " Y " + e.getY());
+        piece.getPosition().setX(e.getX());
+        piece.getPosition().setY(e.getY());
+        boardPanel.repaint();
+    }
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+       
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+      
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+      
+    }
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        
+    }
     
-    
+ 
     
     
 }
