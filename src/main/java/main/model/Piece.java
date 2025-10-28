@@ -52,7 +52,7 @@ public class Piece {
     }
     
     public void draw(Component c, Graphics g){
-        this.imageIcon.paintIcon(c, g, this.position.getX(), this.position.getY());
+        this.imageIcon.paintIcon(c, g, position.getX(), position.getY());
         
         
     }

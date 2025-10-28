@@ -20,7 +20,7 @@ public class Dices {
     }
 
     public Dices() {
-        this.random = random;
+        this.random = new Random();
         
     }
 

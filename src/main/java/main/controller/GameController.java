@@ -46,10 +46,11 @@ public class GameController implements ActionListener, MouseListener{
         this.gameArea = new GameArea();
         this.controllPanel = gUITablero.getPanelControll();
         board = new Board("Red", "Amarillo");
-        dices = new Dices();
+        this.dices = new Dices();
         
-      
-        //piece = new Piece(new Position(453,468), new ImageIcon("./src/main/resources/img/fichaAmarilla.png"));
+        
+        
+        piece = new Piece(new Position(100,100), new ImageIcon("./src/main/resources/img/fichaAmarilla.png"));
     }
     
     public void draw(Component c, Graphics g){
@@ -58,12 +59,14 @@ public class GameController implements ActionListener, MouseListener{
         board.draw(c, g);
         }
     
-   
+    
     @Override
     public void actionPerformed(ActionEvent e) {
+        int resultado = dices.rollDice();
          switch (e.getActionCommand()) {
             case "Lanzar Dado":
-                System.out.println("Resultado de dado:");
+                System.out.println("Resultado de dado:" + dices);
+                System.out.println("Número generado: " +resultado);
             break;
             case "Jugador1":
                 System.out.println("Jugador 1 presionado");
