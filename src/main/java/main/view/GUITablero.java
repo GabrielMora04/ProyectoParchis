@@ -19,12 +19,12 @@ public class GUITablero extends javax.swing.JFrame {
      */
     public GUITablero(GameController gameController) {
         initComponents();
-        this.controllPanel1.setController(gameController);//        this.boardPanel1.setController(gameController);
+        this.controllPanel2.setController(gameController);//        this.boardPanel1.setController(gameController);
         
     }
     
     public ControllPanel getPanelControll(){
-        return controllPanel1;
+        return controllPanel2;
     }
     public BoardPanel getBoardPanel(){
         return boardPanel1;
@@ -41,7 +41,7 @@ public class GUITablero extends javax.swing.JFrame {
     private void initComponents() {
 
         boardPanel1 = new main.view.BoardPanel();
-        controllPanel1 = new main.view.ControllPanel();
+        controllPanel2 = new main.view.ControllPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -58,7 +58,7 @@ public class GUITablero extends javax.swing.JFrame {
         );
 
         getContentPane().add(boardPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 670, 680));
-        getContentPane().add(controllPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 720));
+        getContentPane().add(controllPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -67,6 +67,6 @@ public class GUITablero extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private main.view.BoardPanel boardPanel1;
-    private main.view.ControllPanel controllPanel1;
+    private main.view.ControllPanel controllPanel2;
     // End of variables declaration//GEN-END:variables
 }

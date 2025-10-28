@@ -12,24 +12,31 @@ import java.awt.Color;
  */
 public class Player {
     private String name;
-    private String color;
+    private Color color;
     private Home quadrant;
-   
     private int score;
 
-    public Player(String name, String color, Home quadrant) {
+    public Player(String name, Color color, Home quadrant) {
         this.name = name;
         this.color = color;
         this.quadrant = quadrant;
         score = 5;
+    }
+
+    public Player(String name, Color color) {
+        this.name = name;
+        this.color = color;
         
     }
+
+    
+    
 
     public String getName() {
         return name;
     }
 
-    public String getColor() {
+    public Color getColor() {
         return color;
     }
     

@@ -118,12 +118,13 @@ public class ControllPanel extends javax.swing.JPanel {
         lblJugador.setBackground(new java.awt.Color(204, 204, 204));
         lblJugador.setFont(new java.awt.Font("Segoe UI Historic", 3, 18)); // NOI18N
         lblJugador.setText("Turno: Jugador1");
-        add(lblJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 360, 140, 30));
+        lblJugador.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        add(lblJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 360, 180, 30));
 
-        lblResultadoDado.setBackground(new java.awt.Color(204, 204, 255));
+        lblResultadoDado.setBackground(new java.awt.Color(255, 255, 204));
         lblResultadoDado.setFont(new java.awt.Font("Segoe UI Historic", 3, 18)); // NOI18N
         lblResultadoDado.setText("Dado:");
-        lblResultadoDado.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lblResultadoDado.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         add(lblResultadoDado, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 140, 100, -1));
 
         lblFondoTablero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/tableroCaja.png"))); // NOI18N

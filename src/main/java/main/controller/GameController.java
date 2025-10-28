@@ -36,7 +36,9 @@ public class GameController implements ActionListener, MouseListener{
     private GUIInicio gUIInicio;
     private Dices dices;
     private Board board;
-    
+    private Player player1;
+    private Player player2;
+    private int turno;
    
     public GameController(GUIInicio gUIInicio) {
         this.gUIInicio = gUIInicio;
@@ -48,6 +50,8 @@ public class GameController implements ActionListener, MouseListener{
         board = new Board("Red", "Amarillo");
         this.dices = new Dices();
         
+        this.player1 = new Player("Jugador 1", Color.RED);
+        this.player2 = new Player("Jugador 2", Color.YELLOW);
         
         
         piece = new Piece(new Position(100,100), new ImageIcon("./src/main/resources/img/fichaAmarilla.png"));
@@ -62,11 +66,19 @@ public class GameController implements ActionListener, MouseListener{
     
     @Override
     public void actionPerformed(ActionEvent e) {
-        int resultado = dices.rollDice();
          switch (e.getActionCommand()) {
             case "Lanzar Dado":
-                System.out.println("Resultado de dado:" + dices);
-                System.out.println("Número generado: " +resultado);
+                Player active = getPlayerActive();
+                System.out.println("Turno actual: " + active.getName());
+                
+                int resultado = dices.rollDice();
+                System.out.println("Dado: " +resultado);
+                
+                controllPanel.getLblResultadoDado().setText("Dado: " + resultado);
+                controllPanel.getLblResultadoDado().setForeground(active.getColor());
+                
+                alternateTurno();
+                updatePlayerActive();  
             break;
             case "Jugador1":
                 System.out.println("Jugador 1 presionado");
@@ -112,6 +124,25 @@ public class GameController implements ActionListener, MouseListener{
     }
     
  
+    private Player getPlayerActive(){
+        if (turno == 0) {
+        return player1;
+    } else {
+        return player2;
+        }
+    }
     
+    private void alternateTurno() {
+    turno = (turno + 1) % 2; //alterna entre 0 y 1, jugador1 = 0 y jugador 2 = 1
+    }
     
-}
+    private void updatePlayerActive(){
+        Player active = getPlayerActive();
+        controllPanel.getLblJugador().setText("Turno: " + active.getName());
+        controllPanel.getLblJugador().setForeground(active.getColor());
+    }
+    
+   
+}//end class
+    
+
