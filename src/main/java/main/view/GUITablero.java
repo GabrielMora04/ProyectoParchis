@@ -4,6 +4,7 @@
  */
 package main.view;
 
+import java.awt.event.MouseListener;
 import main.controller.GameController;
 
 /**
@@ -29,8 +30,12 @@ public class GUITablero extends javax.swing.JFrame {
     public BoardPanel getBoardPanel(){
         return boardPanel1;
     }
-//    
+ 
 
+    
+    public void listener(MouseListener controller){
+        this.addMouseListener(controller);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -45,19 +50,7 @@ public class GUITablero extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        javax.swing.GroupLayout boardPanel1Layout = new javax.swing.GroupLayout(boardPanel1);
-        boardPanel1.setLayout(boardPanel1Layout);
-        boardPanel1Layout.setHorizontalGroup(
-            boardPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 670, Short.MAX_VALUE)
-        );
-        boardPanel1Layout.setVerticalGroup(
-            boardPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 680, Short.MAX_VALUE)
-        );
-
-        getContentPane().add(boardPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 670, 680));
+        getContentPane().add(boardPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, 690));
         getContentPane().add(controllPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();

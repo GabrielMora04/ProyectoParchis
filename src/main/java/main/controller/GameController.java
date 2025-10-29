@@ -44,6 +44,9 @@ public class GameController implements ActionListener, MouseListener{
         this.gUIInicio = gUIInicio;
         this.gUITablero = new GUITablero(this);
         this.gUITablero.setVisible(true);
+        
+        this.gUITablero.listener(this); 
+        
         this.boardPanel = gUITablero.getBoardPanel();
         this.gameArea = new GameArea();
         this.controllPanel = gUITablero.getPanelControll();
@@ -52,7 +55,6 @@ public class GameController implements ActionListener, MouseListener{
         
         this.player1 = new Player("Jugador 1", Color.RED);
         this.player2 = new Player("Jugador 2", Color.YELLOW);
-        
         
         piece = new Piece(new Position(100,100), new ImageIcon("./src/main/resources/img/fichaAmarilla.png"));
     }
@@ -97,33 +99,28 @@ public class GameController implements ActionListener, MouseListener{
 
     @Override
     public void mouseClicked(MouseEvent e) {
-        System.out.println("X " + e.getX() + " Y " + e.getY());
-        piece.getPosition().setX(e.getX());
-        piece.getPosition().setY(e.getY());
-        boardPanel.repaint();
+        System.out.println("X= " + e.getX() + " Y= " + e.getY());
+        piece.getPosition().setX(e.getX());//
+        piece.getPosition().setY(e.getY());//
+        boardPanel.repaint();//
     }
 
     @Override
     public void mousePressed(MouseEvent e) {
-       
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-      
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
-      
     }
 
     @Override
-    public void mouseExited(MouseEvent e) {
-        
+    public void mouseExited(MouseEvent e) { 
     }
-    
- 
+   
     private Player getPlayerActive(){
         if (turno == 0) {
         return player1;

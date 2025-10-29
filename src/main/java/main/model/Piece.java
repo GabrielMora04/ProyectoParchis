@@ -18,7 +18,7 @@ public class Piece {
     private Position position;
     private ImageIcon imageIcon;
     private Color color;
-
+    
     public Piece() {
     }
 

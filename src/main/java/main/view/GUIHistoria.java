@@ -44,6 +44,7 @@ public class GUIHistoria extends javax.swing.JFrame {
         lblHistoria.setBackground(new java.awt.Color(204, 204, 255));
         lblHistoria.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         lblHistoria.setText("Historia");
+        lblHistoria.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         btnAtras.setBackground(new java.awt.Color(204, 204, 255));
         btnAtras.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
@@ -61,14 +62,14 @@ public class GUIHistoria extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(182, 182, 182)
                 .addComponent(lblHistoria)
-                .addContainerGap(199, Short.MAX_VALUE))
+                .addContainerGap(193, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(62, 62, 62)
                 .addComponent(lblHistoria)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 223, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 217, Short.MAX_VALUE)
                 .addComponent(btnAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21))
         );

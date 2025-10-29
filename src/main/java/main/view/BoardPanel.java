@@ -10,7 +10,7 @@ import main.controller.GameController;
 
 /**
  *
- * @author gabri
+ * @author Gabriel Mora Hernandez
  */
 public class BoardPanel extends javax.swing.JPanel {
 
@@ -25,6 +25,9 @@ public class BoardPanel extends javax.swing.JPanel {
         this.boardGraphic = new ImageIcon("./src/main/resources/img/TableroParchis.png"); 
         
     }
+    
+    
+   
   
     public void setController(GameController controller){
         this.gameController = controller;
@@ -38,7 +41,7 @@ public class BoardPanel extends javax.swing.JPanel {
     public void paintComponent(Graphics g){
         super.paintComponent(g);
         
-        //g.drawString("Esto es una prueba", 80, 70);
+         
         
         this.boardGraphic.paintIcon(this, g, 0, 0);
         if(gameController != null){
@@ -56,10 +59,36 @@ public class BoardPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        imgfichaAmarilla = new javax.swing.JLabel();
+        imgfichaAzul = new javax.swing.JLabel();
+        imgfichaRoja = new javax.swing.JLabel();
+        imgfichaVerde = new javax.swing.JLabel();
+        lblFondoParchis = new javax.swing.JLabel();
+
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        imgfichaAmarilla.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/fichaAmarilla.png"))); // NOI18N
+        add(imgfichaAmarilla, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 530, -1, -1));
+
+        imgfichaAzul.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/fichaAzul.png"))); // NOI18N
+        add(imgfichaAzul, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 100, -1, -1));
+
+        imgfichaRoja.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/fichaRoja.png"))); // NOI18N
+        add(imgfichaRoja, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, -1, -1));
+
+        imgfichaVerde.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/fichaVerde.png"))); // NOI18N
+        add(imgfichaVerde, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 530, -1, -1));
+
+        lblFondoParchis.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/TableroParchis.png"))); // NOI18N
+        add(lblFondoParchis, new org.netbeans.lib.awtextra.AbsoluteConstraints(-3, -4, 680, 700));
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel imgfichaAmarilla;
+    private javax.swing.JLabel imgfichaAzul;
+    private javax.swing.JLabel imgfichaRoja;
+    private javax.swing.JLabel imgfichaVerde;
+    private javax.swing.JLabel lblFondoParchis;
     // End of variables declaration//GEN-END:variables
 }
