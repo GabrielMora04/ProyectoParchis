@@ -15,10 +15,12 @@ import javax.swing.ImageIcon;
  * @author Gabriel Mora Hernandez
  */
 public class Piece {
+
     private Position position;
     private ImageIcon imageIcon;
     private Color color;
-    
+    private int posicionActual = -1; //-1 es estar en casa
+
     public Piece() {
     }
 
@@ -50,10 +52,17 @@ public class Piece {
     public void setColor(Color color) {
         this.color = color;
     }
-    
-    public void draw(Component c, Graphics g){
+
+    public int getPosicionActual() {
+        return posicionActual;
+    }
+
+    public void setPosicionActual(int posicionActual) {
+        this.posicionActual = posicionActual;
+    }
+
+    public void draw(Component c, Graphics g) {
         this.imageIcon.paintIcon(c, g, position.getX(), position.getY());
-        
-        
+
     }
 }

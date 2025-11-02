@@ -89,8 +89,9 @@ public class GUIInicio extends javax.swing.JFrame {
         btnSalir.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 340, 90, 40));
 
+        imgFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/fondoGUIInicio.png"))); // NOI18N
         imgFondo.setText("jLabel1");
-        getContentPane().add(imgFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 400));
+        getContentPane().add(imgFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, 400));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

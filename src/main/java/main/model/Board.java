@@ -14,18 +14,33 @@ import javax.swing.ImageIcon;
  * @author Gabriel Mora Hernandez
  */
 public class Board {
+
     private Square[] squares;
     private Home homeYellow;
     private Home homeRed;
     private Home homeBlue;
     private Home homeGreen;
     private Position[] positions;
-    
-    
-    
-    public Board(String color1, String color2){   
+
+    public Home getHomeYellow() {
+        return homeYellow;
+    }
+
+    public Home getHomeRed() {
+        return homeRed;
+    }
+
+    public Home getHomeBlue() {
+        return homeBlue;
+    }
+
+    public Home getHomeGreen() {
+        return homeGreen;
+    }
+
+    public Board(String color1, String color2) {
         this.squares = new Square[68];
-        
+
         this.positions = new Position[68];
         this.homeYellow = new Home(color1);
         this.homeRed = new Home(color2);
@@ -34,11 +49,11 @@ public class Board {
         setPositions();
         setQuadrant1();
     }
-    
-    public void setPositions(){
+
+    public void setPositions() {
         positions = new Position[68];
         squares = new Square[68];
-        
+
         //Amarillo
         positions[0] = new Position(433, 694);
         positions[1] = new Position(433, 664);
@@ -54,7 +69,7 @@ public class Board {
         positions[11] = new Position(545, 461); // especial
         positions[12] = new Position(576, 461);
         positions[13] = new Position(607, 461);
-        positions[14] = new Position(638, 461); 
+        positions[14] = new Position(638, 461);
         positions[15] = new Position(669, 461);
         positions[16] = new Position(669, 387); // especial
 
@@ -76,8 +91,8 @@ public class Board {
         positions[31] = new Position(433, 110);
         positions[32] = new Position(433, 80);
         positions[33] = new Position(363, 80); // especial
- 
-       // Rojo
+
+        // Rojo
         positions[34] = new Position(290, 80);
         positions[35] = new Position(290, 109);
         positions[36] = new Position(290, 143);
@@ -115,55 +130,149 @@ public class Board {
         positions[66] = new Position(290, 697);
         positions[67] = new Position(363, 696); // especial
 
-       // Crear los Square
-       for (int i = 0; i < 68; i++) {
-        squares[i] = new Square(positions[i]);
+        // Crear los Square
+        //casillas especiales
+        int[] specialPositions = {11, 16, 28, 33, 45, 50, 62, 67};
+
+        for (int i = 0; i < 68; i++) {
+            boolean isSpecial = false;
+            for (int j = 0; j < specialPositions.length; j++) {
+                if (i == specialPositions[j]) {
+                    isSpecial = true;
+                    break;
+                }
+            }
+            if (isSpecial) {
+                squares[i] = new SpecialSquare(null, positions[i]);
+                squares[i].setType("special");
+            } else {
+                squares[i] = new NormalSquare();
+                squares[i].setPosition(positions[i]);
+                squares[i].setType("normal");
+            }
         }
+
     }//end setPositions
-    
+
     public void setQuadrant1() {
-    // Amarillo
-    homeYellow.setPiece(0, new Piece(new Position(480, 450), new ImageIcon("./src/main/resources/img/fichaAmarilla.png")));
-    homeYellow.setPiece(1, new Piece(new Position(520, 450), new ImageIcon("./src/main/resources/img/fichaAmarilla.png")));
-    homeYellow.setPiece(2, new Piece(new Position(480, 550), new ImageIcon("./src/main/resources/img/fichaAmarilla.png")));
-    homeYellow.setPiece(3, new Piece(new Position(520, 550), new ImageIcon("./src/main/resources/img/fichaAmarilla.png")));
+        // Amarillo
+        Piece fichaAmarilla0 = new Piece(new Position(535, 541), new ImageIcon("./src/main/resources/img/fichaAmarilla.png"));
+        fichaAmarilla0.setPosicionActual(-1);
+        homeYellow.setPiece(0, fichaAmarilla0);
+        //
+        Piece fichaAmarilla1 = new Piece(new Position(563, 540), new ImageIcon("./src/main/resources/img/fichaAmarilla.png"));
+        fichaAmarilla1.setPosicionActual(-1);
+        homeYellow.setPiece(1, fichaAmarilla1);
+        //
+        Piece fichaAmarilla2 = new Piece(new Position(535, 580), new ImageIcon("./src/main/resources/img/fichaAmarilla.png"));
+        fichaAmarilla2.setPosicionActual(-1);
+        homeYellow.setPiece(2, fichaAmarilla2);
+        //
+        Piece fichaAmarilla3 = new Piece(new Position(574, 580), new ImageIcon("./src/main/resources/img/fichaAmarilla.png"));
+        fichaAmarilla3.setPosicionActual(-1);
+        homeYellow.setPiece(3, fichaAmarilla3);
 
-    // Rojo
-    homeRed.setPiece(0, new Piece(new Position(80, 50), new ImageIcon("./src/main/resources/img/fichaRoja.png")));
-    homeRed.setPiece(1, new Piece(new Position(120, 50), new ImageIcon("./src/main/resources/img/fichaRoja.png")));
-    homeRed.setPiece(2, new Piece(new Position(80, 150), new ImageIcon("./src/main/resources/img/fichaRoja.png")));
-    homeRed.setPiece(3, new Piece(new Position(120, 150), new ImageIcon("./src/main/resources/img/fichaRoja.png")));
+        // Rojo
+        Piece fichaRoja0 = new Piece(new Position(136, 159), new ImageIcon("./src/main/resources/img/fichaRoja.png"));
+        fichaRoja0.setPosicionActual(-1);
+        homeRed.setPiece(0, fichaRoja0);
+        //
+        Piece fichaRoja1 = new Piece(new Position(168, 159), new ImageIcon("./src/main/resources/img/fichaRoja.png"));
+        fichaRoja1.setPosicionActual(-1);
+        homeRed.setPiece(1, fichaRoja1);
+        //
+        Piece fichaRoja2 = new Piece(new Position(136, 200), new ImageIcon("./src/main/resources/img/fichaRoja.png"));
+        fichaRoja2.setPosicionActual(-1);
+        homeRed.setPiece(2, fichaRoja2);
+        //
+        Piece fichaRoja3 = new Piece(new Position(168, 200), new ImageIcon("./src/main/resources/img/fichaRoja.png"));
+        fichaRoja3.setPosicionActual(-1);
+        homeRed.setPiece(3, fichaRoja3);
 
-    // Verde
-    homeGreen.setPiece(0, new Piece(new Position(480, 50), new ImageIcon()));
-    homeGreen.setPiece(1, new Piece(new Position(520, 50), new ImageIcon()));
-    homeGreen.setPiece(2, new Piece(new Position(480, 150), new ImageIcon()));
-    homeGreen.setPiece(3, new Piece(new Position(520, 150), new ImageIcon()));
+        // Verde
+        Piece fichaVerde0 = new Piece(new Position(134, 593), new ImageIcon("./src/main/resources/img/fichaVerde.png"));
+        fichaVerde0.setPosicionActual(-1);
+        homeGreen.setPiece(0, fichaVerde0);
+        //
+        Piece fichaVerde1 = new Piece(new Position(166, 593), new ImageIcon("./src/main/resources/img/fichaVerde.png"));
+        fichaVerde1.setPosicionActual(-1);
+        homeGreen.setPiece(1, fichaVerde1);
+        //
+        Piece fichaVerde2 = new Piece(new Position(134, 631), new ImageIcon("./src/main/resources/img/fichaVerde.png"));
+        fichaVerde2.setPosicionActual(-1);
+        homeGreen.setPiece(2, fichaVerde2);
+        //
+        Piece fichaVerde3 = new Piece(new Position(166, 631), new ImageIcon("./src/main/resources/img/fichaVerde.png"));
+        fichaVerde3.setPosicionActual(-1);
+        homeGreen.setPiece(3, fichaVerde3);
 
-    // Azul
-    homeBlue.setPiece(0, new Piece(new Position(80, 450), new ImageIcon()));
-    homeBlue.setPiece(1, new Piece(new Position(120, 450), new ImageIcon()));
-    homeBlue.setPiece(2, new Piece(new Position(80, 550), new ImageIcon()));
-    homeBlue.setPiece(3, new Piece(new Position(120, 550), new ImageIcon()));
-}
-    
-    
-   
-    public void draw(Component c, Graphics g){
+        // Azul
+        Piece fichaAzul0 = new Piece(new Position(560, 159), new ImageIcon("./src/main/resources/img/fichaAzul.png"));
+        fichaAzul0.setPosicionActual(-1);
+        homeBlue.setPiece(0, fichaAzul0);
+        //
+        Piece fichaAzul1 = new Piece(new Position(593, 159), new ImageIcon("./src/main/resources/img/fichaAzul.png"));
+        fichaAzul1.setPosicionActual(-1);
+        homeBlue.setPiece(1, fichaAzul1);
+        //
+        Piece fichaAzul2 = new Piece(new Position(561, 199), new ImageIcon("./src/main/resources/img/fichaAzul.png"));
+        fichaAzul2.setPosicionActual(-1);
+        homeBlue.setPiece(2, fichaAzul2);
+        //
+        Piece fichaAzul3 = new Piece(new Position(593, 199), new ImageIcon("./src/main/resources/img/fichaAzul.png"));
+        fichaAzul3.setPosicionActual(-1);
+        homeBlue.setPiece(3, fichaAzul3);
+
+    }
+
+    public void draw(Component c, Graphics g) {
         //this.squares[0].getPiece().draw(c, g);
-       
+
         for (int i = 0; i < homeYellow.getLength(); i++) {
+
             homeYellow.getPiece(i).draw(c, g);
             homeRed.getPiece(i).draw(c, g);
             homeBlue.getPiece(i).draw(c, g);
             homeGreen.getPiece(i).draw(c, g);
-}
+        }
     }//end draw
-    
-    
-    public void start(){
+
+    public void start() {
         setPositions();
         setQuadrant1();
     }
-    
-}
+
+    public void movePice(Piece ficha, int pasos) {
+        int piece = ficha.getPosicionActual();
+
+        if (piece == -1) {
+            ficha.setPosicionActual(4); //salida casa amarilla
+        } else {
+            int nueva = piece + pasos;
+            if (nueva >= positions.length) {
+                nueva = positions.length - 1; //No sale de la casa
+            }
+            ficha.setPosicionActual(nueva);
+        }
+
+        //Actualiza la posición de la ficha
+        ficha.setPosition(positions[ficha.getPosicionActual()]);
+    }
+
+    public Position getPosition(int i) {
+        if (i >= 0 && i < positions.length) {
+            return positions[i];
+        } else {
+            return null;
+        }
+    }
+
+    public Square getSquareAt(int index) {
+        if (index >= 0 && index < squares.length) {
+            return squares[index];
+        } else {
+            return null;
+        }
+    }
+
+}//fin class

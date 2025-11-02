@@ -12,20 +12,23 @@ import java.awt.Graphics;
  * @author Gabriel Mora Hernandez
  */
 public class GameArea {
+
     private Board board;
     private Player player1;
     private Player player2;
 
-    public GameArea() {
-        board = new Board("Rojo","Amarillo");
+    public GameArea(Board board) {
+        this.board = board;
+//        board = new Board("Rojo","Amarillo");
     }
-   
-    public Board getBoard(){
-        return board;
-        
-    }
-    
-    public void draw(Component c, Graphics g){
+
+    public void draw(Component c, Graphics g) {
         board.draw(c, g);
     }
+
+    public Board getBoard() {
+        return board;
+
+    }
+
 }

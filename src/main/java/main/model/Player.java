@@ -11,10 +11,13 @@ import java.awt.Color;
  * @author Gabriel Mora Hernandez
  */
 public class Player {
+
     private String name;
     private Color color;
     private Home quadrant;
-    private int score;
+    private int score = 5;
+    private boolean extraTurn;
+    private boolean skipTurn;
 
     public Player(String name, Color color, Home quadrant) {
         this.name = name;
@@ -26,11 +29,8 @@ public class Player {
     public Player(String name, Color color) {
         this.name = name;
         this.color = color;
-        
-    }
 
-    
-    
+    }
 
     public String getName() {
         return name;
@@ -39,6 +39,33 @@ public class Player {
     public Color getColor() {
         return color;
     }
+
+    public void sumScore(int s) {
+        score ++;
+    }
+
+    public void resScore(int s) {
+        score--;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setExtraTurn(boolean i) {
+        extraTurn = i;
+    }
+
+    public boolean hasExtraTurn() {
+        return extraTurn;
+    }
+
+    public void setSkipTurn(boolean i) {
+        skipTurn = i;
+    }
+
+    public boolean SkipTurn() {
+        return skipTurn;
+    }
     
-    
-}
+}//fin class

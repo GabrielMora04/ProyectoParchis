@@ -17,7 +17,7 @@ public class Home {
     private  Piece[] pieces;
 
     public Home(String color) {
-        this.color = this.color;
+        this.color = color;
         this.pieces = new Piece[4];
     }
 
@@ -41,7 +41,11 @@ public class Home {
         return this.pieces.length;
     }
     
-//    public void draw(Component c, Graphics g){
+
+}//end class
+
+
+//public void draw(Component c, Graphics g){
 //        if (pieces !=null) {
 //            for (int i = 0; i < pieces.length; i++) {
 //                if(pieces[i] != null){
@@ -50,4 +54,3 @@ public class Home {
 //            }
 //        } 
 //    }
-}//end class

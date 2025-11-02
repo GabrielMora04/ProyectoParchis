@@ -4,14 +4,17 @@
  */
 package main.model;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Gabriel Mora Hernandez
  */
 public class Square {
-    
+
     private Piece piece;
     private Position position;
+    private String type = "normal";
 
     public Square() {
     }
@@ -40,8 +43,21 @@ public class Square {
     public void setPosition(Position position) {
         this.position = position;
     }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     
-    public boolean isEmpty(){
+    
+    public boolean isEmpty() {
         return (piece != null);
     }
-}
+
+    
+
+}//fin class

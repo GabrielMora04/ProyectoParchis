@@ -55,6 +55,10 @@ public class ControllPanel extends javax.swing.JPanel {
         return lblResultadoDado;
     }
     
+    public JLabel getLblPuntaje() {
+    return lblPuntaje;
+}
+   
    
     /**
      * This method is called from within the constructor to initialize the form.
@@ -69,7 +73,7 @@ public class ControllPanel extends javax.swing.JPanel {
         btnSalir = new javax.swing.JButton();
         btnJugador2 = new javax.swing.JButton();
         btnJugador1 = new javax.swing.JButton();
-        btnPuntaje = new javax.swing.JLabel();
+        lblPuntaje = new javax.swing.JLabel();
         btnDado = new javax.swing.JButton();
         lblJugador = new javax.swing.JLabel();
         lblResultadoDado = new javax.swing.JLabel();
@@ -103,11 +107,11 @@ public class ControllPanel extends javax.swing.JPanel {
         btnJugador1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         add(btnJugador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 250, 100, 80));
 
-        btnPuntaje.setBackground(new java.awt.Color(204, 255, 204));
-        btnPuntaje.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        btnPuntaje.setText("Puntaje:");
-        btnPuntaje.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        add(btnPuntaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 190, 100, 30));
+        lblPuntaje.setBackground(new java.awt.Color(204, 255, 204));
+        lblPuntaje.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        lblPuntaje.setText("Puntaje:");
+        lblPuntaje.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        add(lblPuntaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 190, 100, 30));
 
         btnDado.setBackground(new java.awt.Color(242, 242, 242));
         btnDado.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
@@ -141,10 +145,10 @@ public class ControllPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnJugador1;
     private javax.swing.JButton btnJugador2;
     private javax.swing.JButton btnJugar;
-    private javax.swing.JLabel btnPuntaje;
     private javax.swing.JButton btnSalir;
     private javax.swing.JLabel lblFondoTablero;
     private javax.swing.JLabel lblJugador;
+    private javax.swing.JLabel lblPuntaje;
     private javax.swing.JLabel lblResultadoDado;
     // End of variables declaration//GEN-END:variables
 }
