@@ -6,68 +6,65 @@ package main.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import main.model.SoundManager;
+import main.model.StopWatchThread;
 import main.view.GUICreditos;
 import main.view.GUIHistoria;
 import main.view.GUIInicio;
 import main.view.GUIInstrucciones;
-
-
 
 /**
  *
  * @author Gabriel Mora Hernandez
  */
 public class MainController implements ActionListener {
-    
-    
-    
+
     private GUIInicio gUIInicio;
     private GUICreditos gUICreditos;
     private GUIHistoria gUIHistoria;
     private GUIInstrucciones gUIInstrucciones;
     private GameController gameController;
+    private SoundManager soundManager;
 
     public MainController() {
-        gUIInicio =  new GUIInicio(this);
+        gUIInicio = new GUIInicio(this);
         gUIInicio.setVisible(true);
-        gUICreditos =  new GUICreditos(this);
+        gUICreditos = new GUICreditos(this);
         gUIHistoria = new GUIHistoria(this);
         gUIInstrucciones = new GUIInstrucciones(this);
-        
+
     }
-    
+
     @Override
     public void actionPerformed(ActionEvent e) {
         switch (e.getActionCommand()) {
             case "Jugar":
                 gUIInicio.setVisible(false);
                 gameController = new GameController(gUIInicio);
-            break;
+                break;
             case "Instrucciones":
                 gUIInicio.setVisible(false);
                 gUIInstrucciones.setVisible(true);
-            break;
+                break;
             case "Historia":
                 gUIInicio.setVisible(false);
                 gUIHistoria.setVisible(true);
-            break;
+                break;
             case "Creditos":
                 gUIInicio.setVisible(false);
                 gUICreditos.setVisible(true);
-            break;
+                break;
             case "Atras":
                 gUIInicio.setVisible(true);
                 gUIInstrucciones.setVisible(false);
                 gUIHistoria.setVisible(false);
                 gUICreditos.setVisible(false);
-            break;
+                break;
+
             case "Salir":
                 System.exit(0);
-            break;
+                break;
         }
     }
-    
-    
+
 }
-
-

@@ -38,41 +38,25 @@ public class GUIHistoria extends javax.swing.JFrame {
 
         lblHistoria = new javax.swing.JLabel();
         btnAtras = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblHistoria.setBackground(new java.awt.Color(204, 204, 255));
-        lblHistoria.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        lblHistoria.setFont(new java.awt.Font("Perpetua", 3, 36)); // NOI18N
         lblHistoria.setText("Historia");
-        lblHistoria.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        getContentPane().add(lblHistoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, -1, -1));
 
         btnAtras.setBackground(new java.awt.Color(204, 204, 255));
         btnAtras.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         btnAtras.setText("Atras");
         btnAtras.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnAtras.setContentAreaFilled(false);
+        getContentPane().add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(359, 317, 85, 46));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(182, 182, 182)
-                .addComponent(lblHistoria)
-                .addContainerGap(193, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(62, 62, 62)
-                .addComponent(lblHistoria)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 217, Short.MAX_VALUE)
-                .addComponent(btnAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/fondoHistoria.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 380));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -80,6 +64,7 @@ public class GUIHistoria extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAtras;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblHistoria;
     // End of variables declaration//GEN-END:variables
 }

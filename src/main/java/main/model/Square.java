@@ -52,12 +52,8 @@ public class Square {
         this.type = type;
     }
 
-    
-    
     public boolean isEmpty() {
-        return (piece != null);
+        return (piece == null);
     }
-
-    
 
 }//fin class

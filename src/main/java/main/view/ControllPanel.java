@@ -22,29 +22,37 @@ public class ControllPanel extends javax.swing.JPanel {
     private ImageIcon background;
     private GameController controller;
     private ImageIcon boardGraphic;
-    
+
     public ControllPanel() {
         initComponents();
         this.background = new ImageIcon("./src/main/resources/img/tableroCaja.png");
         this.boardGraphic = new ImageIcon("./src/main/resources/img/TableroParchis.png");
-        
     }
 
-   public void setController(GameController controller){
+    public void setCronometro(String segundos) {
+        this.lblCronometro.setText("tiempo: " + segundos + "s");
+    }
+
+    public void setController(GameController controller) {
         this.controller = controller;
         listen();
     }
-    
-   public void listen(){
+
+    public void listen() {
         this.btnDado.addActionListener(controller);
         this.btnJugador1.addActionListener(controller);
         this.btnJugador2.addActionListener(controller);
         this.btnJugar.addActionListener(controller);
         this.btnSalir.addActionListener(controller);
+        this.btnStopWatch.addActionListener(controller);
     }
 
     public JButton getBtnDado() {
-        return btnDado;
+        
+    
+        return null;
+        
+    
     }
 
     public JLabel getLblJugador() {
@@ -54,12 +62,17 @@ public class ControllPanel extends javax.swing.JPanel {
     public JLabel getLblResultadoDado() {
         return lblResultadoDado;
     }
-    
+
     public JLabel getLblPuntaje() {
-    return lblPuntaje;
-}
-   
-   
+        return lblPuntaje;
+    }
+
+    public JLabel getLblTime() {
+        return lblCronometro;
+    }
+
+    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -77,6 +90,8 @@ public class ControllPanel extends javax.swing.JPanel {
         btnDado = new javax.swing.JButton();
         lblJugador = new javax.swing.JLabel();
         lblResultadoDado = new javax.swing.JLabel();
+        lblCronometro = new javax.swing.JLabel();
+        btnStopWatch = new javax.swing.JButton();
         lblFondoTablero = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -99,25 +114,25 @@ public class ControllPanel extends javax.swing.JPanel {
         btnJugador2.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         btnJugador2.setText("Jugador2");
         btnJugador2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        add(btnJugador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 420, 100, 80));
+        add(btnJugador2, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 410, 100, 80));
 
         btnJugador1.setBackground(new java.awt.Color(153, 255, 204));
         btnJugador1.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         btnJugador1.setText("Jugador1");
         btnJugador1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        add(btnJugador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 250, 100, 80));
+        add(btnJugador1, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 260, 100, 80));
 
         lblPuntaje.setBackground(new java.awt.Color(204, 255, 204));
         lblPuntaje.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         lblPuntaje.setText("Puntaje:");
         lblPuntaje.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        add(lblPuntaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 190, 100, 30));
+        add(lblPuntaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 210, 100, 30));
 
         btnDado.setBackground(new java.awt.Color(242, 242, 242));
         btnDado.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         btnDado.setText("Lanzar Dado");
         btnDado.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        add(btnDado, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 70, 120, 50));
+        add(btnDado, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 50, 120, 50));
 
         lblJugador.setBackground(new java.awt.Color(204, 204, 204));
         lblJugador.setFont(new java.awt.Font("Segoe UI Historic", 3, 18)); // NOI18N
@@ -129,7 +144,19 @@ public class ControllPanel extends javax.swing.JPanel {
         lblResultadoDado.setFont(new java.awt.Font("Segoe UI Historic", 3, 18)); // NOI18N
         lblResultadoDado.setText("Dado:");
         lblResultadoDado.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        add(lblResultadoDado, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 140, 100, -1));
+        add(lblResultadoDado, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 110, 100, -1));
+
+        lblCronometro.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        lblCronometro.setForeground(new java.awt.Color(102, 102, 0));
+        lblCronometro.setText("Tiempo: 0 s");
+        add(lblCronometro, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 160, -1, -1));
+
+        btnStopWatch.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        btnStopWatch.setForeground(new java.awt.Color(102, 102, 0));
+        btnStopWatch.setText("Detener tiempo");
+        btnStopWatch.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnStopWatch.setContentAreaFilled(false);
+        add(btnStopWatch, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 500, -1, 30));
 
         lblFondoTablero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/tableroCaja.png"))); // NOI18N
         lblFondoTablero.setText("jLabel1");
@@ -146,6 +173,8 @@ public class ControllPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnJugador2;
     private javax.swing.JButton btnJugar;
     private javax.swing.JButton btnSalir;
+    private javax.swing.JButton btnStopWatch;
+    private javax.swing.JLabel lblCronometro;
     private javax.swing.JLabel lblFondoTablero;
     private javax.swing.JLabel lblJugador;
     private javax.swing.JLabel lblPuntaje;

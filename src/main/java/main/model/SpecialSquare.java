@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
  */
 public class SpecialSquare extends Square {
 
+    private SoundManager soundManager;
     private String type;
 
     public SpecialSquare(String type) {
@@ -31,10 +32,12 @@ public class SpecialSquare extends Square {
         this.setType("special");
     }
 
+    @Override
     public String getType() {
         return type;
     }
 
+    @Override
     public void setType(String type) {
         this.type = type;
     }
@@ -56,9 +59,11 @@ public class SpecialSquare extends Square {
         if (correct) {
             player.setExtraTurn(true);
             JOptionPane.showMessageDialog(null, "Correcto. Ganaste un turno extra.");
+            SoundManager.playEffect("/sounds/correcta.wav"); // acierto
         } else {
             player.setSkipTurn(true);
             JOptionPane.showMessageDialog(null, "Incorrecto. Pierdes un turno");
+            SoundManager.playEffect("/sounds/incorrecta.wav"); // error
         }
     }
 }//fin class

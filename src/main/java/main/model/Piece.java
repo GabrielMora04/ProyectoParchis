@@ -20,6 +20,8 @@ public class Piece {
     private ImageIcon imageIcon;
     private Color color;
     private int posicionActual = -1; //-1 es estar en casa
+    private boolean inGoalTrack = false; // true si ya entró al carril de color
+    private int posicionActualEnMeta = -1;
 
     public Piece() {
     }
@@ -59,6 +61,22 @@ public class Piece {
 
     public void setPosicionActual(int posicionActual) {
         this.posicionActual = posicionActual;
+    }
+
+    public boolean isInGoalTrack() {
+        return inGoalTrack;
+    }
+
+    public void setInGoalTrack(boolean inGoalTrack) {
+        this.inGoalTrack = inGoalTrack;
+    }
+
+    public int getPosicionActualEnMeta() {
+        return posicionActualEnMeta;
+    }
+
+    public void setPosicionActualEnMeta(int posicionActualEnMeta) {
+        this.posicionActualEnMeta = posicionActualEnMeta;
     }
 
     public void draw(Component c, Graphics g) {

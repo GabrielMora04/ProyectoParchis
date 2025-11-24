@@ -49,6 +49,7 @@ public class BoardPanel extends javax.swing.JPanel {
         if (gameController != null) {
             this.gameController.draw(this, g);
         }
+        
     }
     
     

@@ -4,6 +4,7 @@
  */
 package main.view;
 
+import java.awt.HeadlessException;
 import java.awt.event.ActionListener;
 import main.controller.MainController;
 
@@ -23,6 +24,12 @@ public class GUIInicio extends javax.swing.JFrame {
         listen();
     }
 
+    public GUIInicio() throws HeadlessException {
+        initComponents();
+    }
+
+    
+    
      public void listen(){
         this.btnInstrucciones.addActionListener(controller);
         this.btnHistoria.addActionListener(controller);
@@ -56,37 +63,38 @@ public class GUIInicio extends javax.swing.JFrame {
         getContentPane().add(lblWelcome, new org.netbeans.lib.awtextra.AbsoluteConstraints(196, 50, -1, 37));
 
         btnInstrucciones.setBackground(new java.awt.Color(204, 204, 255));
-        btnInstrucciones.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        btnInstrucciones.setForeground(new java.awt.Color(255, 255, 255));
+        btnInstrucciones.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         btnInstrucciones.setText("Instrucciones");
         btnInstrucciones.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        getContentPane().add(btnInstrucciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(245, 191, 150, 43));
+        btnInstrucciones.setContentAreaFilled(false);
+        getContentPane().add(btnInstrucciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(245, 191, 160, 43));
 
         btnCreditos.setBackground(new java.awt.Color(204, 204, 255));
-        btnCreditos.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        btnCreditos.setForeground(new java.awt.Color(255, 255, 255));
+        btnCreditos.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         btnCreditos.setText("Creditos");
         btnCreditos.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnCreditos.setContentAreaFilled(false);
         getContentPane().add(btnCreditos, new org.netbeans.lib.awtextra.AbsoluteConstraints(268, 312, 100, 42));
 
         btnHistoria.setBackground(new java.awt.Color(204, 204, 255));
-        btnHistoria.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        btnHistoria.setForeground(new java.awt.Color(255, 255, 255));
+        btnHistoria.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         btnHistoria.setText("Historia");
         btnHistoria.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnHistoria.setContentAreaFilled(false);
         getContentPane().add(btnHistoria, new org.netbeans.lib.awtextra.AbsoluteConstraints(268, 252, 100, 42));
 
         btnJugar.setBackground(new java.awt.Color(204, 204, 255));
-        btnJugar.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
-        btnJugar.setForeground(new java.awt.Color(255, 255, 255));
+        btnJugar.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         btnJugar.setText("Jugar");
         btnJugar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnJugar.setContentAreaFilled(false);
         getContentPane().add(btnJugar, new org.netbeans.lib.awtextra.AbsoluteConstraints(279, 130, 80, 43));
 
         btnSalir.setBackground(new java.awt.Color(204, 204, 255));
         btnSalir.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         btnSalir.setText("Salir");
         btnSalir.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnSalir.setContentAreaFilled(false);
         getContentPane().add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 340, 90, 40));
 
         imgFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/fondoGUIInicio.png"))); // NOI18N

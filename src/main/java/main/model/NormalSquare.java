@@ -11,6 +11,8 @@ import javax.swing.JOptionPane;
  * @author Gabriel Mora Hernandez
  */
 public class NormalSquare extends Square {
+    private SoundManager soundManager;
+    
     public void applyRule(Player player, QuestionBank bank) {
         Question question = bank.getQuestionByLevel(1); // dificultad facil
         if (question == null) return;
@@ -24,9 +26,12 @@ public class NormalSquare extends Square {
         if (correct) {
             player.sumScore(1);
             JOptionPane.showMessageDialog(null, "Correcto. +1 punto");
+            SoundManager.playEffect("/sounds/correcta.wav"); // acierto
+            
         } else {
             player.resScore(1);
             JOptionPane.showMessageDialog(null, "Incorrecto. −1 punto");
+            SoundManager.playEffect("/sounds/incorrecta.wav"); // error
         }
     }
     

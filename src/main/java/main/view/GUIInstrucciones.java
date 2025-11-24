@@ -37,40 +37,25 @@ public class GUIInstrucciones extends javax.swing.JFrame {
 
         lblInstrucciones = new javax.swing.JLabel();
         btnAtras = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblInstrucciones.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         lblInstrucciones.setText("Instrucciones");
         lblInstrucciones.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        getContentPane().add(lblInstrucciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 40, -1, -1));
 
         btnAtras.setBackground(new java.awt.Color(204, 204, 255));
         btnAtras.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         btnAtras.setText("Atras");
         btnAtras.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnAtras.setContentAreaFilled(false);
+        getContentPane().add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(425, 332, 97, 46));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(203, 203, 203)
-                .addComponent(lblInstrucciones)
-                .addContainerGap(205, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(73, 73, 73)
-                .addComponent(lblInstrucciones)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 221, Short.MAX_VALUE)
-                .addComponent(btnAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29))
-        );
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/fondoInstrucciones.png"))); // NOI18N
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, 410));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -79,6 +64,7 @@ public class GUIInstrucciones extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAtras;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblInstrucciones;
     // End of variables declaration//GEN-END:variables
 }

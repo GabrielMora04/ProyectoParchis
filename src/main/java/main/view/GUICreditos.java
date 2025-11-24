@@ -37,40 +37,34 @@ public class GUICreditos extends javax.swing.JFrame {
 
         lblCreditos = new javax.swing.JLabel();
         btnAtras = new javax.swing.JButton();
+        lblHechoPor = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        lblFondoCreditos = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblCreditos.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         lblCreditos.setText("Creditos");
-        lblCreditos.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        getContentPane().add(lblCreditos, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, -1, 46));
 
         btnAtras.setBackground(new java.awt.Color(204, 204, 255));
         btnAtras.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         btnAtras.setText("Atras");
         btnAtras.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnAtras.setContentAreaFilled(false);
+        getContentPane().add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 320, 86, 41));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(204, 204, 204)
-                .addComponent(lblCreditos)
-                .addContainerGap(220, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(50, 50, 50)
-                .addComponent(lblCreditos, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 198, Short.MAX_VALUE)
-                .addComponent(btnAtras, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(25, 25, 25))
-        );
+        lblHechoPor.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        lblHechoPor.setText("Hecho Por: ");
+        getContentPane().add(lblHechoPor, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Tw Cen MT", 3, 24)); // NOI18N
+        jLabel2.setText("Gabriel Jesús Mora Hernández");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, -1, -1));
+
+        lblFondoCreditos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/fondoCreditos.png"))); // NOI18N
+        getContentPane().add(lblFondoCreditos, new org.netbeans.lib.awtextra.AbsoluteConstraints(-3, -4, 560, 370));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -79,6 +73,9 @@ public class GUICreditos extends javax.swing.JFrame {
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAtras;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblCreditos;
+    private javax.swing.JLabel lblFondoCreditos;
+    private javax.swing.JLabel lblHechoPor;
     // End of variables declaration//GEN-END:variables
 }

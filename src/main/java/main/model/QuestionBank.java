@@ -60,5 +60,23 @@ public class QuestionBank {
         int aleatoria = (int) (Math.random() * filtro.length);
         return filtro[aleatoria];
     }
-      
+
+    public boolean launchSpecialQuest(Player jugador) {
+    // Tomamos una pregunta de nivel 1 (puedes variar el nivel)
+    Question question = getQuestionByLevel(1);
+
+    // Mostrar la pregunta en un JOptionPane
+    String respuesta = javax.swing.JOptionPane.showInputDialog(
+        null,
+        jugador.getName() + ", responde: " + question.getQuestion() + "\n(Escribe Verdadero o Falso)",
+        "Pregunta Especial",
+        javax.swing.JOptionPane.QUESTION_MESSAGE
+    );
+
+    // Convertir la respuesta del jugador a boolean
+    boolean userAnswer = respuesta != null && respuesta.equalsIgnoreCase("True");
+
+    // Usar el método answer de la clase Question
+    return question.answer(userAnswer);
+    }
 }//fin class

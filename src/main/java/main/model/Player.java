@@ -41,11 +41,11 @@ public class Player {
     }
 
     public void sumScore(int s) {
-        score ++;
+        score += s;
     }
 
     public void resScore(int s) {
-        score--;
+        score-= s;
     }
 
     public int getScore() {

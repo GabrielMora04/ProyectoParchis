@@ -44,13 +44,3 @@ public class Home {
 
 }//end class
 
-
-//public void draw(Component c, Graphics g){
-//        if (pieces !=null) {
-//            for (int i = 0; i < pieces.length; i++) {
-//                if(pieces[i] != null){
-//                    pieces[i].draw(c, g);
-//                }
-//            }
-//        } 
-//    }
