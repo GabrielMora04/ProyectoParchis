@@ -61,22 +61,24 @@ public class GUIGameOver extends javax.swing.JFrame {
         btnReiniciar.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         btnReiniciar.setText("Reiniciar");
         btnReiniciar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnReiniciar.setContentAreaFilled(false);
         btnReiniciar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnReiniciarActionPerformed(evt);
             }
         });
-        getContentPane().add(btnReiniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 360, 90, 40));
+        getContentPane().add(btnReiniciar, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 300, 90, 40));
 
         btnVolverInicio.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         btnVolverInicio.setText("Volver a Inicio");
         btnVolverInicio.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnVolverInicio.setContentAreaFilled(false);
         btnVolverInicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVolverInicioActionPerformed(evt);
             }
         });
-        getContentPane().add(btnVolverInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 360, 130, 40));
+        getContentPane().add(btnVolverInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 300, 130, 40));
 
         lblTitulo.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
         lblTitulo.setText("¡GAME OVER!");
@@ -88,14 +90,14 @@ public class GUIGameOver extends javax.swing.JFrame {
 
         lblTiempo.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         lblTiempo.setText("Tiempo total:");
-        getContentPane().add(lblTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 280, 260, -1));
+        getContentPane().add(lblTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, 310, -1));
 
         lblPuntaje.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         lblPuntaje.setText("Puntaje final: ");
         getContentPane().add(lblPuntaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, 280, -1));
 
-        lblFondo.setText("jLabel1");
-        getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-3, -4, 550, 430));
+        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/fondoGameOver.png"))); // NOI18N
+        getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 360));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -38,7 +38,11 @@ public class GUIHistoria extends javax.swing.JFrame {
 
         lblHistoria = new javax.swing.JLabel();
         btnAtras = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        lblHistory = new javax.swing.JLabel();
+        lblHistory1 = new javax.swing.JLabel();
+        lblHistory2 = new javax.swing.JLabel();
+        lblHistory3 = new javax.swing.JLabel();
+        lblfFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -55,8 +59,24 @@ public class GUIHistoria extends javax.swing.JFrame {
         btnAtras.setContentAreaFilled(false);
         getContentPane().add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(359, 317, 85, 46));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/fondoHistoria.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 380));
+        lblHistory.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        lblHistory.setText("de la isla y alzarse con la victoria");
+        getContentPane().add(lblHistory, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, -1, -1));
+
+        lblHistory1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        lblHistory1.setText("para llegar hasta la meta y convertirse en los nuevos dueños");
+        getContentPane().add(lblHistory1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, -1, 60));
+
+        lblHistory2.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        lblHistory2.setText("Usarán a criaturas originarias del mar como compañeros");
+        getContentPane().add(lblHistory2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, -1, -1));
+
+        lblHistory3.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        lblHistory3.setText("Dos jugadores lucharán por ver quien es el Rey de la isla");
+        getContentPane().add(lblHistory3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, -1, -1));
+
+        lblfFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/fondoHistoria.png"))); // NOI18N
+        getContentPane().add(lblfFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 470, 380));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -64,7 +84,11 @@ public class GUIHistoria extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAtras;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblHistoria;
+    private javax.swing.JLabel lblHistory;
+    private javax.swing.JLabel lblHistory1;
+    private javax.swing.JLabel lblHistory2;
+    private javax.swing.JLabel lblHistory3;
+    private javax.swing.JLabel lblfFondo;
     // End of variables declaration//GEN-END:variables
 }

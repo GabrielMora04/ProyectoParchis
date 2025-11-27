@@ -8,6 +8,7 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Graphics;
 import javax.swing.ImageIcon;
+import main.model.Position;
 
 /**
  *
@@ -118,7 +119,6 @@ public class Board {
         positions[41] = new Position(259, 226);
         positions[42] = new Position(228, 261);
 
-        //Actualizar las de abajo
         positions[43] = new Position(229, 259);
         positions[44] = new Position(190, 248);
         positions[45] = new Position(130, 252); // especial
@@ -126,26 +126,27 @@ public class Board {
         positions[47] = new Position(67, 252);
         positions[48] = new Position(40, 252);
         positions[49] = new Position(5, 252);
-        positions[50] = new Position(58, 388); // especial
+        positions[50] = new Position(11, 313); // especial
 
         // Verde
-        positions[51] = new Position(58, 461);
-        positions[52] = new Position(88, 461);
-        positions[53] = new Position(119, 461);
-        positions[54] = new Position(148, 461);
-        positions[55] = new Position(181, 461); // salida casa
-        positions[56] = new Position(212, 461);
-        positions[57] = new Position(241, 461);
-        positions[58] = new Position(275, 446);
-        positions[59] = new Position(304, 478);
-        positions[60] = new Position(290, 509);
-        positions[61] = new Position(290, 540);
-        positions[62] = new Position(290, 571); // especial
-        positions[63] = new Position(290, 604);
-        positions[64] = new Position(290, 637);
-        positions[65] = new Position(290, 667);
-        positions[66] = new Position(290, 697);
-        positions[67] = new Position(363, 696); // especial
+        positions[51] = new Position(11, 389);
+        positions[52] = new Position(39, 389);
+        positions[53] = new Position(71, 389);
+        positions[54] = new Position(104, 389);
+        positions[55] = new Position(132, 389); // salida casa
+        positions[56] = new Position(165, 389);
+        positions[57] = new Position(196, 389);
+        positions[58] = new Position(224, 389);
+
+        positions[59] = new Position(256, 409);
+        positions[60] = new Position(250, 440);
+        positions[61] = new Position(250, 468);
+        positions[62] = new Position(250, 502); // especial
+        positions[63] = new Position(250, 536);
+        positions[64] = new Position(250, 565);
+        positions[65] = new Position(250, 597);
+        positions[66] = new Position(250, 628);
+        positions[67] = new Position(314, 629); // especial
 
         // Crear los Square
         //casillas especiales
@@ -206,13 +207,13 @@ public class Board {
 
         // CASILLAS DE META VERDES
         goalGreen[0] = new Position(40, 322);
-        goalGreen[0] = new Position(70, 322);
-        goalGreen[0] = new Position(100, 322);
-        goalGreen[0] = new Position(128, 322);
-        goalGreen[0] = new Position(163, 322);
-        goalGreen[0] = new Position(195, 322);
-        goalGreen[0] = new Position(222, 322);
-        goalGreen[0] = new Position(259, 322);
+        goalGreen[1] = new Position(70, 322);
+        goalGreen[2] = new Position(100, 322);
+        goalGreen[3] = new Position(128, 322);
+        goalGreen[4] = new Position(163, 322);
+        goalGreen[5] = new Position(195, 322);
+        goalGreen[6] = new Position(222, 322);
+        goalGreen[7] = new Position(259, 322);
 
     }
 
@@ -220,69 +221,85 @@ public class Board {
         // Amarillo
         Piece fichaAmarilla0 = new Piece(new Position(512, 521), new ImageIcon("./src/main/resources/img/fichaAmarilla.png"));
         fichaAmarilla0.setPosicionActual(-1);
+        fichaAmarilla0.setColor(Color.YELLOW);
         homeYellow.setPiece(0, fichaAmarilla0);
         //
         Piece fichaAmarilla1 = new Piece(new Position(550, 521), new ImageIcon("./src/main/resources/img/fichaAmarilla.png"));
         fichaAmarilla1.setPosicionActual(-1);
+        fichaAmarilla1.setColor(Color.YELLOW);
         homeYellow.setPiece(1, fichaAmarilla1);
         //
         Piece fichaAmarilla2 = new Piece(new Position(515, 558), new ImageIcon("./src/main/resources/img/fichaAmarilla.png"));
         fichaAmarilla2.setPosicionActual(-1);
+        fichaAmarilla2.setColor(Color.YELLOW);
         homeYellow.setPiece(2, fichaAmarilla2);
         //
         Piece fichaAmarilla3 = new Piece(new Position(550, 558), new ImageIcon("./src/main/resources/img/fichaAmarilla.png"));
         fichaAmarilla3.setPosicionActual(-1);
+        fichaAmarilla3.setColor(Color.YELLOW);
         homeYellow.setPiece(3, fichaAmarilla3);
 
         // Rojo
         Piece fichaRoja0 = new Piece(new Position(84, 75), new ImageIcon("./src/main/resources/img/fichaRoja.png"));
         fichaRoja0.setPosicionActual(-1);
+        fichaRoja0.setColor(Color.RED);
         homeRed.setPiece(0, fichaRoja0);
         //
         Piece fichaRoja1 = new Piece(new Position(120, 75), new ImageIcon("./src/main/resources/img/fichaRoja.png"));
         fichaRoja1.setPosicionActual(-1);
+        fichaRoja1.setColor(Color.RED);
         homeRed.setPiece(1, fichaRoja1);
         //
         Piece fichaRoja2 = new Piece(new Position(84, 117), new ImageIcon("./src/main/resources/img/fichaRoja.png"));
         fichaRoja2.setPosicionActual(-1);
+        fichaRoja2.setColor(Color.RED);
         homeRed.setPiece(2, fichaRoja2);
         //
         Piece fichaRoja3 = new Piece(new Position(120, 117), new ImageIcon("./src/main/resources/img/fichaRoja.png"));
         fichaRoja3.setPosicionActual(-1);
+        fichaRoja3.setColor(Color.RED);
         homeRed.setPiece(3, fichaRoja3);
 
         // Verde
         Piece fichaVerde0 = new Piece(new Position(89, 516), new ImageIcon("./src/main/resources/img/fichaVerde.png"));
         fichaVerde0.setPosicionActual(-1);
+        fichaVerde0.setColor(Color.GREEN);
         homeGreen.setPiece(0, fichaVerde0);
         //
         Piece fichaVerde1 = new Piece(new Position(119, 516), new ImageIcon("./src/main/resources/img/fichaVerde.png"));
         fichaVerde1.setPosicionActual(-1);
+        fichaVerde1.setColor(Color.GREEN);
         homeGreen.setPiece(1, fichaVerde1);
         //
         Piece fichaVerde2 = new Piece(new Position(89, 561), new ImageIcon("./src/main/resources/img/fichaVerde.png"));
         fichaVerde2.setPosicionActual(-1);
+        fichaVerde2.setColor(Color.GREEN);
         homeGreen.setPiece(2, fichaVerde2);
         //
         Piece fichaVerde3 = new Piece(new Position(119, 561), new ImageIcon("./src/main/resources/img/fichaVerde.png"));
         fichaVerde3.setPosicionActual(-1);
+        fichaVerde3.setColor(Color.GREEN);
         homeGreen.setPiece(3, fichaVerde3);
 
         // Azul
         Piece fichaAzul0 = new Piece(new Position(509, 88), new ImageIcon("./src/main/resources/img/fichaAzul.png"));
         fichaAzul0.setPosicionActual(-1);
+        fichaAzul0.setColor(Color.BLUE);
         homeBlue.setPiece(0, fichaAzul0);
         //
         Piece fichaAzul1 = new Piece(new Position(548, 88), new ImageIcon("./src/main/resources/img/fichaAzul.png"));
         fichaAzul1.setPosicionActual(-1);
+        fichaAzul1.setColor(Color.BLUE);
         homeBlue.setPiece(1, fichaAzul1);
         //
         Piece fichaAzul2 = new Piece(new Position(509, 130), new ImageIcon("./src/main/resources/img/fichaAzul.png"));
         fichaAzul2.setPosicionActual(-1);
+        fichaAzul2.setColor(Color.BLUE);
         homeBlue.setPiece(2, fichaAzul2);
         //
         Piece fichaAzul3 = new Piece(new Position(548, 130), new ImageIcon("./src/main/resources/img/fichaAzul.png"));
         fichaAzul3.setPosicionActual(-1);
+        fichaAzul3.setColor(Color.BLUE);
         homeBlue.setPiece(3, fichaAzul3);
 
     }
@@ -305,22 +322,62 @@ public class Board {
         setGoalPositions();
     }
 
-    public void movePice(Piece ficha, int pasos) {
-        int piece = ficha.getPosicionActual();
+    public void movePice(Piece piece, int steps) {
+        int posActual = piece.getPosicionActual();
 
-        if (piece == -1) {
-            ficha.setPosicionActual(4); //salida casa amarilla
-        } else {
-            int nueva = piece + pasos;
-            if (nueva >= positions.length) {
-                nueva = positions.length - 1; //No sale de la casa
+        // Salida de casa
+        if (posActual == -1) {
+            if (steps == 5) {
+                int exit = 0;
+                if (piece.getColor().equals(Color.YELLOW)) {
+                    exit = 4;
+                } else if (piece.getColor().equals(Color.BLUE)) {
+                    exit = 21;
+                } else if (piece.getColor().equals(Color.RED)) {
+                    exit = 38;
+                } else if (piece.getColor().equals(Color.GREEN)) {
+                    exit = 55;
+                }
+
+                piece.setPosicionActual(exit);
+                piece.setPosition(positions[exit]);
             }
-            ficha.setPosicionActual(nueva);
+            return;
         }
 
-        //Actualiza la posición de la ficha
-        ficha.setPosition(positions[ficha.getPosicionActual()]);
-    }
+        // Ya en meta
+        if (piece.isInGoalTrack()) {
+            int posMetaActual = piece.getPosicionActualEnMeta();
+            int nuevaMetaPos = posMetaActual + steps;
+            if (nuevaMetaPos <= 7) {
+                piece.setPosicionActualEnMeta(nuevaMetaPos);
+                Position[] goalArray = getGoalArrayForColor(piece.getColor());
+                piece.setPosition(goalArray[nuevaMetaPos]);
+            }
+            return;
+        }
+
+//        int entryIndex = getEntrySquareIndex(piece.getColor());
+        int entryIndex = getEntrySquareIndex(piece.getColor());
+
+        if (posActual <= entryIndex && posActual + steps > entryIndex) {
+            int pasosSobrantes = (posActual + steps) - entryIndex - 1;
+
+            if (pasosSobrantes <= 7) {
+                piece.setInGoalTrack(true);
+                piece.setPosicionActualEnMeta(pasosSobrantes);
+                piece.setPosicionActual(-2);
+                Position[] goalArray = getGoalArrayForColor(piece.getColor());
+                piece.setPosition(goalArray[pasosSobrantes]);
+                return;
+            }
+        }
+
+        // Movimiento normal
+        int nuevaPos = (posActual + steps) % 68;
+        piece.setPosicionActual(nuevaPos);
+        piece.setPosition(positions[nuevaPos]);
+    }//fin class movePiece
 
     public Position getPosition(int i) {
         if (i >= 0 && i < positions.length) {
@@ -353,7 +410,36 @@ public class Board {
         } else if (color.equals(Color.GREEN)) {
             return goalGreen;
         }
-        return null; // En caso de un color no manejado
+        return null;
+    }
+
+    public int countPiecesInGoal(Home home) {
+        int count = 0;
+
+        if (home == null) {
+            return 0;
+        }
+        for (int i = 0; i < home.getLength(); i++) {
+            Piece piece = home.getPiece(i);
+
+            if (piece.isInGoalTrack() && piece.getPosicionActualEnMeta() == 7) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    private int getEntrySquareIndex(Color color) {
+        if (color.equals(Color.YELLOW)) {
+            return 67; // Entrada Amarilla
+        } else if (color.equals(Color.BLUE)) {
+            return 16; // Entrada Azul
+        } else if (color.equals(Color.RED)) {
+            return 33; // Entrada Roja
+        } else if (color.equals(Color.GREEN)) {
+            return 50; // Entrada Verde
+        }
+        return -1;
     }
 
 }//fin class

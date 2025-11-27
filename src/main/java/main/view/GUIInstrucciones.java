@@ -37,7 +37,16 @@ public class GUIInstrucciones extends javax.swing.JFrame {
 
         lblInstrucciones = new javax.swing.JLabel();
         btnAtras = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        lblIns = new javax.swing.JLabel();
+        lblIns2 = new javax.swing.JLabel();
+        lblIns1 = new javax.swing.JLabel();
+        lblIns3 = new javax.swing.JLabel();
+        lblIns4 = new javax.swing.JLabel();
+        lblIns5 = new javax.swing.JLabel();
+        lblIns6 = new javax.swing.JLabel();
+        lblIns7 = new javax.swing.JLabel();
+        lblIns8 = new javax.swing.JLabel();
+        lblFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -54,8 +63,44 @@ public class GUIInstrucciones extends javax.swing.JFrame {
         btnAtras.setContentAreaFilled(false);
         getContentPane().add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(425, 332, 97, 46));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/fondoInstrucciones.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, 410));
+        lblIns.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        lblIns.setText("Si es casilla especial gana +2 puntos si acierta, y si falla -3 puntos");
+        getContentPane().add(lblIns, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 240, -1, -1));
+
+        lblIns2.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        lblIns2.setText("Habrán dos jugadores activos");
+        getContentPane().add(lblIns2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, -1, -1));
+
+        lblIns1.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        lblIns1.setText("Por cada casilla que caiga, aparecera una pregunta de V/F");
+        getContentPane().add(lblIns1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, -1, -1));
+
+        lblIns3.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        lblIns3.setText("¡Gana quien lleve primero una ficha a la meta!");
+        getContentPane().add(lblIns3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 310, -1, 60));
+
+        lblIns4.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        lblIns4.setText("Solo podrá sacar una ficha cuando el dado muestre un 5");
+        getContentPane().add(lblIns4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 150, -1, -1));
+
+        lblIns5.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        lblIns5.setText("si acierta +1 puntos, y si falla -1 puntos");
+        getContentPane().add(lblIns5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, -1, 60));
+
+        lblIns6.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
+        lblIns6.setText("¡Diviertete!");
+        getContentPane().add(lblIns6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 340, -1, 60));
+
+        lblIns7.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        lblIns7.setText("Si aciertas, ganas un turno extra, si fallas pierdes el turno");
+        getContentPane().add(lblIns7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, -1, 60));
+
+        lblIns8.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
+        lblIns8.setText("Al caer sobre la ficha de otro jugador, aparecerá una pregunta de casilla especial");
+        getContentPane().add(lblIns8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, -1, 60));
+
+        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/fondoInstrucciones.png"))); // NOI18N
+        getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, 410));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -64,7 +109,16 @@ public class GUIInstrucciones extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAtras;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel lblFondo;
+    private javax.swing.JLabel lblIns;
+    private javax.swing.JLabel lblIns1;
+    private javax.swing.JLabel lblIns2;
+    private javax.swing.JLabel lblIns3;
+    private javax.swing.JLabel lblIns4;
+    private javax.swing.JLabel lblIns5;
+    private javax.swing.JLabel lblIns6;
+    private javax.swing.JLabel lblIns7;
+    private javax.swing.JLabel lblIns8;
     private javax.swing.JLabel lblInstrucciones;
     // End of variables declaration//GEN-END:variables
 }

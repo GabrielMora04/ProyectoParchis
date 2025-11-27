@@ -106,7 +106,10 @@ public class GameController implements ActionListener, MouseListener {
                 System.out.println("Dado: " + resultado);
 
                 controllPanel.getLblResultadoDado().setText("Dado: " + resultado);
-//                controllPanel.getLblResultadoDado().setForeground(active.getColor());
+//                String ruta = "/img/dado" + resultado + ".png";
+//                ImageIcon iconoDado = new ImageIcon(getClass().getResource(ruta));
+//                controllPanel.getLblResultadoDado().setIcon(iconoDado);
+//              controllPanel.getLblResultadoDado().setForeground(active.getColor());
 
                 Piece piece;
                 if (active == player1) {
@@ -115,46 +118,34 @@ public class GameController implements ActionListener, MouseListener {
                     piece = board.getHomeYellow().getPiece(0);
                 }
 
-                //Movimiento de las ficha
-                // Saca la ficha si esta en casa y si sale 5 en dado
-                if (piece.getPosicionActual() == -1 && resultado == 5) {
-                    if (active == player1) {
-                        // salida del jugador 1 
-                        piece.setPosicionActual(38);
-                        piece.setPosition(board.getPosition(38));
-                    } else {
-                        // salida del jugador 2 
-                        piece.setPosicionActual(4);
-                        piece.setPosition(board.getPosition(47));
-                    }
+                board.movePice(piece, resultado);
+                boardPanel.repaint();
 
-                    boardPanel.repaint();
+                //GUIWIN VICTORY
+                if (piece.isInGoalTrack() && piece.getPosicionActualEnMeta() == 7) {
+                    stopWatchThread.detener();
+                    int tiempoTotal = stopWatchThread.getSegundos();
+                    SoundManager.stopAmbiente();
+                    SoundManager.playEffect("/sounds/victory.wav");
 
+                    GUIWin gUIWin = new GUIWin(active.getName(),
+                            tiempoTotal, active.getScore());
+                    gUIWin.setVisible(true);
+
+                    gUITablero.dispose();
+                    return; // salir
+                }
+
+                if (!piece.isInGoalTrack()) {
                     Square squareActual = board.getSquareAt(piece.getPosicionActual());
-                    if (squareActual.getType().equals("special")) {
-                        ((SpecialSquare) squareActual).applySpecialRule(active, questionBank);
-                    } else {
-                        ((NormalSquare) squareActual).applyRule(active, questionBank);
+                    if (squareActual != null) {
+                        if ("special".equals(squareActual.getType())) {
+                            ((SpecialSquare) squareActual).applySpecialRule(getPlayerActive(), questionBank);
+                        } else {
+                            ((NormalSquare) squareActual).applyRule(getPlayerActive(), questionBank);
+                        }
                     }
 
-                } else if (piece.getPosicionActual() != -1) {
-                    int nuevaPos = piece.getPosicionActual() + resultado;
-
-                    if (nuevaPos >= board.getPositions().length) {
-                        nuevaPos = nuevaPos % board.getPositions().length;// 
-                    }
-
-                    piece.setPosicionActual(nuevaPos);
-                    piece.setPosition(board.getPosition(nuevaPos));
-
-                    boardPanel.repaint();
-
-                    Square squareActual = board.getSquareAt(piece.getPosicionActual());
-                    if (squareActual.getType().equals("special")) {
-                        ((SpecialSquare) squareActual).applySpecialRule(active, questionBank);
-                    } else {
-                        ((NormalSquare) squareActual).applyRule(active, questionBank);
-                    }
                 }
                 //
 
@@ -197,21 +188,6 @@ public class GameController implements ActionListener, MouseListener {
                     GUIGameOver gameOver = new GUIGameOver(active.getName(),
                             tiempoTotal, active.getScore());
                     gameOver.setVisible(true);
-
-                    gUITablero.dispose();
-                    return; // salir
-                }
-
-                //Prueba GUIWin
-                if (active.getScore() == 6) {
-                    stopWatchThread.detener();
-                    int tiempoTotal = stopWatchThread.getSegundos();
-                    SoundManager.stopAmbiente();
-                    SoundManager.playEffect("/sounds/victory.wav");
-
-                    GUIWin gUIWin = new GUIWin(active.getName(),
-                            tiempoTotal, active.getScore());
-                    gUIWin.setVisible(true);
 
                     gUITablero.dispose();
                     return; // salir

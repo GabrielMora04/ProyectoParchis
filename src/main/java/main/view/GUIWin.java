@@ -42,7 +42,6 @@ public class GUIWin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblWin = new javax.swing.JLabel();
         lblJugador = new javax.swing.JLabel();
         lblPuntaje = new javax.swing.JLabel();
         lblTiempo = new javax.swing.JLabel();
@@ -53,25 +52,22 @@ public class GUIWin extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblWin.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
-        lblWin.setText("¡Has Ganado!");
-        getContentPane().add(lblWin, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 40, -1, -1));
-
         lblJugador.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         lblJugador.setText("Jugador:");
-        getContentPane().add(lblJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 140, 200, -1));
+        getContentPane().add(lblJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 90, 200, -1));
 
         lblPuntaje.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         lblPuntaje.setText("Puntaje Final:");
-        getContentPane().add(lblPuntaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, 180, -1));
+        getContentPane().add(lblPuntaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 180, -1));
 
         lblTiempo.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         lblTiempo.setText("Tiempo total:");
-        getContentPane().add(lblTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, 160, -1));
+        getContentPane().add(lblTiempo, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 210, 230, -1));
 
         btnReiniciar.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         btnReiniciar.setText("Reiniciar");
         btnReiniciar.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnReiniciar.setContentAreaFilled(false);
         btnReiniciar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnReiniciarActionPerformed(evt);
@@ -82,6 +78,7 @@ public class GUIWin extends javax.swing.JFrame {
         lblInicio.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
         lblInicio.setText("Volver a inicio");
         lblInicio.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        lblInicio.setContentAreaFilled(false);
         lblInicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 lblInicioActionPerformed(evt);
@@ -90,8 +87,8 @@ public class GUIWin extends javax.swing.JFrame {
         getContentPane().add(lblInicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 361, 140, 40));
 
         lblFondo.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
-        lblFondo.setText("jLabel4");
-        getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-3, -4, 560, 430));
+        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/fondoWin.png"))); // NOI18N
+        getContentPane().add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-3, -4, 560, 410));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -117,6 +114,5 @@ public class GUIWin extends javax.swing.JFrame {
     private javax.swing.JLabel lblJugador;
     private javax.swing.JLabel lblPuntaje;
     private javax.swing.JLabel lblTiempo;
-    private javax.swing.JLabel lblWin;
     // End of variables declaration//GEN-END:variables
 }
